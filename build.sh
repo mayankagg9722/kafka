@@ -1,8 +1,5 @@
 #!/bin/bash
-set -e
 
-IMAGE_NAME="test-build"
-TAG="latest"
+cd docker/docker_official_images/3.7.0/jvm
 
-echo "=== Building Docker image: $IMAGE_NAME:$TAG ==="
-docker build -t $IMAGE_NAME:$TAG .
+docker buildx build -f Dockerfile .
